@@ -1,0 +1,6 @@
+/.venv
+/app.env
+/data
+/history.txt
+/_history.txt
+/__pycache__

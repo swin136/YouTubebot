@@ -86,10 +86,11 @@ def read_user_history(users : list):
         if os.path.exists(HISTORY_FILE): 
             f = open(file=HISTORY_FILE, mode="rt")
             try:
-                lst = [str(item).replace("\n", "") for item in f.readlines() if len(item.strip()) > 0]
+                for word in [str(item).replace("\n", "") for item in f.readlines() if len(item.strip()) > 0]:
+                    users.append(int(word.split(":")[0]))
             finally: f.close()
 
-            for item in lst: users.append(int(item.split(":")[0]))
+            # for word in lst: users.append(int(word.split(":")[0]))
                 # newlst = item.split(":")
                 # users.append(int(newlst[0])) 
                 
@@ -101,7 +102,12 @@ def write_user_history(userid : int, username: str, users : list):
         f.write(f"{userid}:{username}:{datetime.now().strftime('%Y-%m-%d %H:%M:%S')}\n")
 
     finally: f.close()
-    
+
+
+# if __name__ == "__main__":
+#     read_user_history(user_id)
+#     print(__file__)
+#     print(user_id)
 
 
 

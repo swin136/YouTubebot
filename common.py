@@ -86,12 +86,13 @@ def read_user_history(users : list):
         if os.path.exists(HISTORY_FILE): 
             f = open(file=HISTORY_FILE, mode="rt")
             try:
-                lst = [str(item).replace("\n", "") for item in f.readlines()]
+                lst = [str(item).replace("\n", "") for item in f.readlines() if len(item.strip()) > 0]
             finally: f.close()
 
-            for item in lst:
-                newlst = item.split(":")
-                users.append(int(newlst[0])) 
+            for item in lst: users.append(int(item.split(":")[0]))
+                # newlst = item.split(":")
+                # users.append(int(newlst[0])) 
+                
 
 def write_user_history(userid : int, username: str, users : list):
     users.append(userid)
@@ -101,6 +102,7 @@ def write_user_history(userid : int, username: str, users : list):
 
     finally: f.close()
     
+
 
 
 

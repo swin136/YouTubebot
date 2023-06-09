@@ -82,7 +82,6 @@ def read_user_history(users : list):
         """
         Считываем истрорию юзверей из файла HISTORY_FILE
         """
-
         if os.path.exists(HISTORY_FILE): 
             f = open(file=HISTORY_FILE, mode="rt")
             try:

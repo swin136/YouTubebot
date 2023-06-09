@@ -102,7 +102,6 @@ def write_user_history(userid : int, username: str, users : list):
 
     finally: f.close()
 
-
 # if __name__ == "__main__":
 #     read_user_history(user_id)
 #     print(__file__)

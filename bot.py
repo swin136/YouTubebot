@@ -11,7 +11,7 @@ ENV_FILE
 if os.path.exists(ENV_FILE):
     load_dotenv('app.env')
 else: 
-    print('Отсутствует файл конфигурации!!')
+    print(f'Отсутствует файл конфигурации {ENV_FILE}!!')
     quit()
     
 bot = Bot(token=os.environ.get('yt_token'), parse_mode="HTML")

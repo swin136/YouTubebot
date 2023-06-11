@@ -44,7 +44,7 @@ async def send_audio(message : types.Message):
         file_size = os.path.getsize(audio_file)
         if file_size < MAX_SIZE_AUDIO:
             # Загоняем трек в Shazam
-            track_definition = await recognize_track(input_file=audio_file)
+            if file_size < MAX_SAHAZAM_FILE: track_definition = await recognize_track(input_file=audio_file)
             with open(audio_file, 'rb') as audio:
                 await bot.send_audio(message.from_user.id, audio, caption=f"Аудиофайл видеоролика <b>'{track_title['title']}'</b>.")
                 # Отправляем пользователю автора песни и название трека из Shazam-а

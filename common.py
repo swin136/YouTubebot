@@ -14,7 +14,10 @@ user_id = []
 # Каталог для сохранения файлов
 WORK_FOLDER = 'data'
 # Максимальный размер файла для передачи через бот (поставил примерно)
-MAX_SIZE_AUDIO = 24117248
+MAX_SIZE_AUDIO = 51380224
+
+# Максимальный размер файла для прогонки через Shazam
+MAX_SAHAZAM_FILE =10485760 
 # https://www.thepythoncode.com/article/make-a-youtube-video-downloader-in-python
 
 HISTORY_FILE = 'history.txt'
